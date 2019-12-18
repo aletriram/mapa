@@ -246,8 +246,9 @@ var load = (function () {
 		if (!_mapas[id]) return null;
 
 		var buscar = [];
+		var street = options.direccion2 ? options.direccion + ' ' + options.direccion2 : options.direccion;
 		if (options.codigoPostal) buscar.push('postalcode=' + options.codigoPostal);
-		if (options.direccion) buscar.push('street=' + options.direccion + options.direccion2 ? ' ' + options.direccion2 : '');
+		if (street) buscar.push('street=' + street);
 		if (options.localidad) buscar.push('city=' + options.localidad);
 		if (options.pais) buscar.push('country=' + options.pais);
 		buscar.push('format=json');
